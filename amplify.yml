@@ -1,0 +1,19 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - cd sezzle_flex_pay
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: sezzle_flex_pay/dist
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - sezzle_flex_pay/node_modules/**/*
+    appRoot: sezzle_flex_pay
