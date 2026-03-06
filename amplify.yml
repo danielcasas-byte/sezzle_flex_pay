@@ -4,16 +4,15 @@ applications:
       phases:
         preBuild:
           commands:
-            - cd sezzle_flex_pay
             - npm ci
         build:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: sezzle_flex_pay/dist
+        baseDirectory: dist
         files:
           - '**/*'
       cache:
         paths:
-          - sezzle_flex_pay/node_modules/**/*
+          - node_modules/**/*
     appRoot: sezzle_flex_pay
